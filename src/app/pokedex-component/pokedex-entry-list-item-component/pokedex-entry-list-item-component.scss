@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: black;
+  background-color: azure;
+
+  .flex-container {
+    display: flex;
+    width: 136px;
+    height: 136px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    border-radius: 5px;
+    gap: 5px;
+    flex-direction: column;
+
+    img {
+      width: 96px;
+      height: 96px;
+    }
+
+    .text-container {
+      text-align: center;
+    }
+  }
+
+}

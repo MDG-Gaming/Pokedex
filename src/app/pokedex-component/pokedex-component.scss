@@ -1,0 +1,9 @@
+.pokedex-view {
+  height: 90vh;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(136px, max-content));
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

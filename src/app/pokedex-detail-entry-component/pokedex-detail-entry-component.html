@@ -1,0 +1,51 @@
+<section class="pokemon-detail">
+  <div class="detail-card">
+    <header class="detail-header">
+      <div class="sprite-wrap">
+        <img [src]="pokemonDetail.sprite" [alt]="pokemonDetail.name" class="sprite">
+      </div>
+      <h2 class="pokemon-name">{{ pokemonDetail.name }}</h2>
+    </header>
+
+    <div class="detail-section">
+      <h3 class="section-title">Types</h3>
+      <ul class="chip-list">
+        @for (type of pokemonDetail.types; track type)
+        {
+        <li class="chip">
+          {{ type.type.name }}
+        </li>
+        }
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="section-title">Abilities</h3>
+      <ul class="ability-list">
+        @for (ability of pokemonDetail.abilities; track ability)
+        {
+        <li class="ability-item">
+          {{ ability.ability.name }} @if (ability.is_hidden) { <span class="hidden-tag">(Hidden)</span> }
+        </li>
+        }
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="section-title">Stats</h3>
+      <ul class="stats-list">
+        @for (stat of pokemonDetail.stats; track stat)
+        {
+        <li class="stat-row">
+          <span class="stat-label">{{ stat.stat.name }}</span>
+          <span class="stat-value">{{ stat.base_stat }}</span>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="detailSwitcher">
+  <button class="nav-button" (click)="lastPokemon()">Previous</button>
+  <button class="nav-button" (click)="nextPokemon()">Next</button>
+</section>

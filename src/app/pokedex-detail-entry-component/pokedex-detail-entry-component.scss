@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Kanit:wght@600;700;800&display=swap');
+
+:host {
+	--surface: linear-gradient(160deg, #f7f2e9 0%, #fff9ef 48%, #efe8db 100%);
+	--paper: #ffffff;
+	--ink: #162028;
+	--subtle: #66737d;
+	--accent: #ef476f;
+	--accent-2: #ffd166;
+	--line: #e7ded1;
+
+	display: block;
+	min-height: 100vh;
+	padding: 2rem 1rem;
+	background: var(--surface);
+	color: var(--ink);
+	font-family: 'Chakra Petch', 'Trebuchet MS', sans-serif;
+}
+
+.pokemon-detail {
+	width: min(100%, 56rem);
+	margin: 0 auto;
+}
+
+.detail-card {
+	position: relative;
+	overflow: hidden;
+	border: 2px solid var(--ink);
+	border-radius: 1.2rem;
+	padding: 1.2rem;
+	background: var(--paper);
+	box-shadow: 0.45rem 0.45rem 0 0 var(--ink);
+}
+
+.detail-card::before {
+	content: '';
+	position: absolute;
+	inset: -50% auto auto -30%;
+	width: 16rem;
+	height: 16rem;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgb(239 71 111 / 20%) 0%, rgb(239 71 111 / 0%) 70%);
+	pointer-events: none;
+}
+
+.detail-header {
+	display: grid;
+	justify-items: center;
+	gap: 0.8rem;
+	margin-bottom: 1.2rem;
+}
+
+.sprite-wrap {
+	width: 10.5rem;
+	height: 10.5rem;
+	display: grid;
+	place-items: center;
+	border: 2px solid var(--ink);
+	border-radius: 1rem;
+	background: repeating-linear-gradient(
+		45deg,
+		#fff 0,
+		#fff 10px,
+		#f8f3e9 10px,
+		#f8f3e9 20px
+	);
+}
+
+.sprite {
+	width: 90%;
+	height: 90%;
+	object-fit: contain;
+	image-rendering: pixelated;
+}
+
+.pokemon-name {
+	font-family: 'Kanit', 'Impact', sans-serif;
+	font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.detail-section {
+	margin-top: 1.2rem;
+	border-top: 1px solid var(--line);
+	padding-top: 1rem;
+}
+
+.section-title {
+	margin-bottom: 0.7rem;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.chip-list,
+.ability-list,
+.stats-list {
+	list-style: none;
+	display: grid;
+	gap: 0.55rem;
+}
+
+.chip-list {
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
+.chip {
+	border: 2px solid var(--ink);
+	border-radius: 0.75rem;
+	padding: 0.5rem 0.75rem;
+	background: linear-gradient(135deg, #fffaf1 0%, #fff 100%);
+	text-align: center;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.ability-item {
+	border-left: 4px solid var(--accent);
+	padding: 0.45rem 0.65rem;
+	background: #fffaf1;
+	border-radius: 0 0.4rem 0.4rem 0;
+	text-transform: capitalize;
+}
+
+.hidden-tag {
+	color: var(--subtle);
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.stat-row {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 0.4rem 0.8rem;
+	align-items: center;
+}
+
+.stat-label {
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+.stat-value {
+	font-weight: 700;
+	color: var(--ink);
+}
+
+.detailSwitcher {
+	width: min(100%, 56rem);
+	margin: 1rem auto 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.8rem;
+}
+
+.nav-button {
+	appearance: none;
+	border: 2px solid var(--ink);
+	border-radius: 0.85rem;
+	padding: 0.7rem 1rem;
+	font-family: 'Kanit', 'Impact', sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: var(--ink);
+	background: linear-gradient(150deg, #fff 0%, #fff4da 100%);
+	box-shadow: 0.28rem 0.28rem 0 0 var(--ink);
+	transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+.nav-button:first-child {
+	background: linear-gradient(150deg, #fff 0%, #ffe8ec 100%);
+}
+
+.nav-button:last-child {
+	background: linear-gradient(150deg, #fff 0%, #fff4da 100%);
+}
+
+.nav-button:hover {
+	filter: brightness(1.03);
+	box-shadow: 0.35rem 0.35rem 0 0 var(--ink);
+}
+
+.nav-button:active {
+	box-shadow: 0.16rem 0.16rem 0 0 var(--ink);
+}
+
+.nav-button:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--accent) 45%, white);
+	outline-offset: 2px;
+}
+
+@media (min-width: 40rem) {
+	:host {
+		padding: 2.5rem 1.5rem;
+	}
+
+	.detail-card {
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 30rem) {
+	.detailSwitcher {
+		grid-template-columns: 1fr;
+	}
+}

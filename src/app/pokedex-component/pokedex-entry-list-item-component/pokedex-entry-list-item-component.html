@@ -1,0 +1,8 @@
+<a [routerLink]="`${pokemon().id}`">
+  <div class="flex-container">
+    <img [src]="pokemon().pictureUrl" [alt]="pokemon().name" />
+    <div class="text-container">
+      <p>{{pokemon().id}} {{pokemon().name}}</p>
+    </div>
+  </div>
+</a>

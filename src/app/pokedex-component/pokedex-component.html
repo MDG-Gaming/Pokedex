@@ -1,0 +1,6 @@
+<h1>Pokédex</h1>
+<div class="pokedex-view" id="scrollTarget" (scroll)="onScroll($event)">
+  @for (pokemon of pokedexPage; track pokemon) {
+    <app-pokedex-entry-list-item-component [pokemon]="pokemon" />
+  }
+</div>
